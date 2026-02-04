@@ -97,17 +97,19 @@
         const imagen = document.querySelector("#imagen-dinamica");
         const tarjeta = document.querySelector("#tarjeta");
 
-        // Diferentes imágenes de Milk y Mocha para cuando dicen NO
+        // Secuencia de imágenes de los ositos para el botón NO
         const imagenesNo = [
             "https://media.tenor.com/y_v9Xk3S_8UAAAAi/milk-and-mocha-bear-sad.gif",
-            "https://media.tenor.com/T09_XNId6mYAAAAi/sad-duck-cry.gif",
             "https://media.tenor.com/m6Yj8vI-9pAAAAAi/milk-and-mocha-bear.gif",
-            "https://media.tenor.com/86m2-M6IAn8AAAAi/milk-and-mocha.gif"
+            "https://media.tenor.com/86m2-M6IAn8AAAAi/milk-and-mocha.gif",
+            "https://media.tenor.com/9TCH_pS0B6UAAAAi/milk-and-mocha.gif"
         ];
 
+        // Secuencia de frases según el video
         const frases = [
             "¿Estás segura? 🧐",
             "¡Piénsalo bien! 🥺",
+            "Gorda, ¿segurita? 🙊",
             "No me hagas esto...💔",
             "¡Última oportunidad! 🏃‍♂️",
             "¡Di que sí! 😤"
@@ -117,7 +119,7 @@
         let escalaSi = 1;
 
         btnNo.addEventListener("click", function () {
-            // 1. Cambiar imagen de los ositos
+            // 1. Cambiar imagen (rota por la lista)
             imagen.src = imagenesNo[indice % imagenesNo.length];
 
             // 2. Cambiar texto del botón No
@@ -131,11 +133,12 @@
         });
 
         btnSi.addEventListener("click", function () {
+            // Pantalla final según el video
             tarjeta.innerHTML = `
                 <div class="imagen-container">
                     <img src="https://media.tenor.com/vH3jH_m48_oAAAAi/duck-love.gif" style="width:100%">
                 </div>
-                <h2 style="color: #d63384; margin-top: 20px;">¡Sabía que dirías que sí! 😎❤️</h2>
+                <h2 style="color: #d63384; margin-top: 20px;">¡Uy qué fácil, ya sabía! 😎❤️</h2>
             `;
             btnNo.style.display = 'none';
         });
