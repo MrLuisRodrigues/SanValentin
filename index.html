@@ -26,11 +26,21 @@
             width: 90%;
         }
 
-        img {
-            width: 160px;
-            height: 160px;
-            border-radius: 15px;
+        .imagen-container {
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 15px;
+            object-fit: contain;
         }
 
         h1 {
@@ -56,7 +66,7 @@
             font-size: 1.1rem;
             font-weight: bold;
             cursor: pointer;
-            transition: all 0.2s ease; /* Transición suave para el tamaño */
+            transition: all 0.2s ease;
         }
 
         #btn-no {
@@ -74,7 +84,9 @@
 <body>
 
     <div class="contenedor" id="tarjeta">
-        <img id="imagen-dinamica" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHJndmR4ZWZ6bmR6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="Gatitos tiernos">
+        <div class="imagen-container">
+            <img id="imagen-dinamica" src="[attachment_0](attachment)" alt="Patito tierno">
+        </div>
         <h1 id="titulo">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="botones">
             <button id="btn-si">¡SÍ! 😍</button>
@@ -102,24 +114,24 @@
         let indiceFrase = 0;
         let escalaSi = 1;
 
-        // Ahora usamos 'click' para que cambie al presionarlo, 
-        // pero puedes cambiarlo a 'mouseover' si prefieres que cambie al pasar el mouse.
         btnNo.addEventListener("click", function () {
-            // 1. Cambiar el texto del botón No
+            // Cambiar el texto del botón No
             btnNo.innerText = frases[indiceFrase];
             indiceFrase = (indiceFrase + 1) % frases.length;
 
-            // 2. Aumentar el tamaño del botón Sí
-            escalaSi += 0.4; // Aumenta de tamaño significativamente
+            // Aumentar el tamaño del botón Sí
+            escalaSi += 0.4; 
             btnSi.style.transform = `scale(${escalaSi})`;
 
-            // 3. Cambiar imagen a triste
-            imagen.src = "https://media.giphy.com/media/7SF5scGB2AFrO/giphy.gif";
+            // Cambiar imagen a una triste si rechazan (usando un link alternativo)
+            imagen.src = "https://media.tenor.com/T09_XNId6mYAAAAi/sad-duck-cry.gif";
         });
 
         btnSi.addEventListener("click", function () {
             tarjeta.innerHTML = `
-                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmt6amZ4Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTfuxVovtHshTG/giphy.gif" style="width:100%">
+                <div class="imagen-container">
+                    <img src="https://media.tenor.com/vH3jH_m48_oAAAAi/duck-love.gif" style="width:100%">
+                </div>
                 <h2 style="color: #d63384; margin-top: 20px;">¡Sabía que dirías que sí! 😎❤️</h2>
             `;
             btnNo.style.display = 'none';
