@@ -2,74 +2,151 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>¿Quieres ser mi San Valentín?</title>
-                <style>
-                        /* CSS: Estilo y Diseño */
-                                body {
-                                            display: flex;
-                                                        justify-content: center;
-                                                                    align-items: center;
-                                                                                height: 100vh;
-                                                                                            margin: 0;
-                                                                                                        background-color: #ffe6e6;
-                                                                                                                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                                                                                                                                overflow: hidden; /* Evita que salgan barras de scroll si el botón huye */
-                                                                                                                                        }
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres ser mi San Valentín?</title>
+    <style>
+        /* Diseño General */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #ffe6e6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
+        }
 
-                                                                                                                                                .contenedor {
-                                                                                                                                                            text-align: center;
-                                                                                                                                                                        background: white;
-                                                                                                                                                                                    padding: 40px;
-                                                                                                                                                                                                border-radius: 30px;
-                                                                                                                                                                                                            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-                                                                                                                                                                                                                        max-width: 400px;
-                                                                                                                                                                                                                                    width: 90%;
-                                                                                                                                                                                                                                                transition: all 0.3s ease;
-                                                                                                                                                                                                                                                        }
+        .contenedor {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 30px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            max-width: 400px;
+            width: 90%;
+            position: relative;
+        }
 
-                                                                                                                                                                                                                                                                img {
-                                                                                                                                                                                                                                                                            width: 180px;
-                                                                                                                                                                                                                                                                                        height: 180px;
-                                                                                                                                                                                                                                                                                                    border-radius: 15px;
-                                                                                                                                                                                                                                                                                                                margin-bottom: 20px;
-                                                                                                                                                                                                                                                                                                                            object-fit: cover;
-                                                                                                                                                                                                                                                                                                                                    }
+        img {
+            width: 180px;
+            height: 180px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
 
-                                                                                                                                                                                                                                                                                                                                            h1 {
-                                                                                                                                                                                                                                                                                                                                                        color: #d63384;
-                                                                                                                                                                                                                                                                                                                                                                    font-size: 1.5rem;
-                                                                                                                                                                                                                                                                                                                                                                                margin-bottom: 30px;
-                                                                                                                                                                                                                                                                                                                                                                                        }
+        h1 {
+            color: #d63384;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
 
-                                                                                                                                                                                                                                                                                                                                                                                                .botones {
-                                                                                                                                                                                                                                                                                                                                                                                                            display: flex;
-                                                                                                                                                                                                                                                                                                                                                                                                                        justify-content: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                    align-items: center;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                gap: 15px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                            min-height: 100px; /* Espacio para que el botón SI crezca */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }
+        /* Contenedor de botones para que no se encimen al inicio */
+        .botones {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            min-height: 150px; /* Espacio para que el botón SI crezca */
+        }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                            #btn-si {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        background-color: #ff4d4d;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    color: white;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                padding: 12px 25px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            border: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        border-radius: 12px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    cursor: pointer;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                font-size: 1.1rem;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            font-weight: bold;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        transition: all 0.2s ease;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    box-shadow: 0 4px 10px rgba(255, 77, 77, 0.3);
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }
+        #btn-si {
+            background-color: #ff4d4d;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: all 0.2s ease;
+            position: relative;
+            z-index: 1; /* El botón SI siempre debajo del NO que se mueve */
+        }
 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    #btn-no {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                position: absolute; /* Permite el movimiento libre */
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            background-color: #888;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        color: white;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    padding: 10px 20px;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                border: none;
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            border-radius: 10px;
+        #btn-no {
+            background-color: #888;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            position: relative; /* Cambia a absolute en el JS cuando se mueve */
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor" id="tarjeta">
+        <img id="imagen-dinamica" src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueXNidXN4OXF4Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiMKdJ/giphy.gif" alt="Gif tierno">
+        
+        <h1 id="titulo">¿Quieres ser mi San Valentín? ❤️</h1>
+        
+        <div class="botones">
+            <button id="btn-si">¡SÍ! 😍</button>
+            <button id="btn-no">No... 😢</button>
+        </div>
+    </div>
+
+    <script>
+        const btnNo = document.querySelector("#btn-no");
+        const btnSi = document.querySelector("#btn-si");
+        const imagen = document.querySelector("#imagen-dinamica");
+        const tarjeta = document.querySelector("#tarjeta");
+
+        const frases = [
+            "¿Estás segura? 🧐",
+            "Piénsalo bien... 🥺",
+            "¡Gorda, por favor! 😭",
+            "¿Segura, segurita? 🙊",
+            "No me hagas esto...💔",
+            "¡Última oportunidad! 🏃‍♂️",
+            "Voy a llorar... 😿",
+            "¡Di que sí! 😤",
+            "Ya me dio ansiedad 😰"
+        ];
+
+        let indiceFrase = 0;
+        let tamañoSi = 1;
+
+        btnNo.addEventListener("mouseover", function () {
+            // Al primer contacto, el botón se vuelve absoluto para poder "huir"
+            btnNo.style.position = "absolute";
+            
+            // Generar posición aleatoria
+            const x = Math.random() * (window.innerWidth - btnNo.clientWidth);
+            const y = Math.random() * (window.innerHeight - btnNo.clientHeight);
+            
+            btnNo.style.left = x + "px";
+            btnNo.style.top = y + "px";
+
+            // Cambiar texto
+            btnNo.innerText = frases[indiceFrase];
+            indiceFrase = (indiceFrase + 1) % frases.length;
+
+            // El botón SÍ crece cada vez que intentan darle al NO
+            tamañoSi += 0.3;
+            btnSi.style.transform = `scale(${tamañoSi})`;
+
+            // Cambiar imagen a triste
+            imagen.src = "https://media.giphy.com/media/7SF5scGB2AFrO/giphy.gif";
+        });
+
+        btnSi.addEventListener("click", function () {
+            // Respuesta final
+            tarjeta.innerHTML = `
+                <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNmt6amZ4Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6Z3R6JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/l41lTfuxVovtHshTG/giphy.gif" style="width:100%">
+                <h2 style="color: #d63384; margin-top: 20px;">¡Uy, qué fácil! Sabía que dirías que sí 😎❤️</h2>
+            `;
+            btnNo.style.display = 'none';
+        });
+    </script>
+</body>
+</html>
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         cursor: pointer;
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     font-size: 1rem;
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 transition: all 0.3s ease;
