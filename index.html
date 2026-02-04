@@ -33,7 +33,6 @@
             justify-content: center;
             align-items: center;
             margin-bottom: 15px;
-            overflow: hidden;
         }
 
         img {
@@ -77,6 +76,7 @@
             border-radius: 10px;
             font-size: 1rem;
             cursor: pointer;
+            position: relative;
             transition: all 0.2s ease;
         }
     </style>
@@ -85,7 +85,7 @@
 
     <div class="contenedor" id="tarjeta">
         <div class="imagen-container">
-            <img id="imagen-dinamica" src="[attachment_0](attachment)" alt="Patito tierno">
+            <img id="imagen-dinamica" src="[attachment_0](attachment)" alt="Ositos cariñosos">
         </div>
         <h1 id="titulo">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="botones">
@@ -123,14 +123,14 @@
             escalaSi += 0.4; 
             btnSi.style.transform = `scale(${escalaSi})`;
 
-            // Cambiar imagen a una triste si rechazan (usando un link alternativo)
-            imagen.src = "https://media.tenor.com/T09_XNId6mYAAAAi/sad-duck-cry.gif";
+            // Imagen de osito triste si dicen que no
+            imagen.src = "https://media.tenor.com/y_v9Xk3S_8UAAAAi/milk-and-mocha-bear-sad.gif";
         });
 
         btnSi.addEventListener("click", function () {
             tarjeta.innerHTML = `
                 <div class="imagen-container">
-                    <img src="https://media.tenor.com/vH3jH_m48_oAAAAi/duck-love.gif" style="width:100%">
+                    <img src="https://media.tenor.com/S-K-uN4Y08MAAAAi/milk-and-mocha.gif" style="width:100%">
                 </div>
                 <h2 style="color: #d63384; margin-top: 20px;">¡Sabía que dirías que sí! 😎❤️</h2>
             `;
