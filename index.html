@@ -13,6 +13,7 @@
             margin: 0;
             background-color: #ffe6e6;
             font-family: 'Segoe UI', sans-serif;
+            overflow: hidden;
         }
         .contenedor {
             text-align: center;
@@ -75,7 +76,7 @@
 
     <div class="contenedor" id="tarjeta">
         <div class="imagen-container">
-            <img id="imagen-dinamica" src="https://media.tenor.com/9v6N_D_v_pQAAAAi/qoobee-agapi.gif" alt="Nailong tierno">
+            <img id="imagen-dinamica" src="https://media.tenor.com/nailong-pouting.gif" alt="Nailong">
         </div>
         <h1 id="titulo">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="botones">
@@ -90,11 +91,11 @@
         const imagen = document.querySelector("#imagen-dinamica");
         const tarjeta = document.querySelector("#tarjeta");
 
-        // Enlaces DIRECTOS a los GIFs de Nailong (terminan en .gif)
+        // Lista de GIFs de Nailong para cuando dicen NO
         const imagenesNo = [
-            "https://media.tenor.com/y_v9Xk3S_8UAAAAi/milk-and-mocha-bear-sad.gif",
-            "https://media.tenor.com/7SF5scGB2AFrO/giphy.gif",
-            "https://media.tenor.com/4N3mY2eY-0MAAAAi/qoobee-agapi-crying.gif"
+            "https://media.tenor.com/nailong-crying.gif",
+            "https://media.tenor.com/nailong-sad-dragon.gif",
+            "https://media.tenor.com/nailong-tears.gif"
         ];
 
         const frases = [
@@ -110,20 +111,21 @@
         let escalaSi = 1;
 
         btnNo.addEventListener("click", function () {
-            // Cambia la imagen rotando por la lista
+            // Cambiar imagen rotando
             imagen.src = imagenesNo[indice % imagenesNo.length];
-            // Cambia el texto del botón NO
+            // Cambiar texto
             btnNo.innerText = frases[indice % frases.length];
-            // Hace crecer el botón SÍ
+            // El botón SÍ crece
             escalaSi += 0.4;
             btnSi.style.transform = `scale(${escalaSi})`;
             indice++;
         });
 
         btnSi.addEventListener("click", function () {
+            // Nailong sacando la lengua (Final)
             tarjeta.innerHTML = `
                 <div class="imagen-container">
-                    <img src="https://media.tenor.com/vH3jH_m48_oAAAAi/duck-love.gif" style="width:100%">
+                    <img src="https://media.tenor.com/nailong-tongue.gif" style="width:100%">
                 </div>
                 <h2 style="color: #d63384; margin-top: 20px;">¡Uy qué fácil, ya sabía! 😎❤️</h2>
             `;
