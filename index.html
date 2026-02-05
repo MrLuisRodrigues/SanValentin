@@ -93,9 +93,10 @@
 
         // Lista de GIFs de Nailong para cuando dicen NO
         const imagenesNo = [
-            "https://media.tenor.com/nailong-crying.gif",
-            "https://media.tenor.com/nailong-sad-dragon.gif",
-            "https://media.tenor.com/nailong-tears.gif"
+            "https://tenor.com/es-US/view/nailong-yellow-dragon-yellow-dino-pouting-gif-14907431710915501229.gif",
+            "https://tenor.com/es-US/view/naloong-naloong-meme-naloong-toy-yellonw-toy-yellow-dragon-toy-gif-1548139012361920604.gif",
+            "https://tenor.com/es-US/view/nailong-yellow-dragon-gif-8404420301845100200.gif"
+            "https://tenor.com/es-US/view/fat-dude-gif-12540840439339705665.gif"
         ];
 
         const frases = [
@@ -116,7 +117,7 @@
             // Cambiar texto
             btnNo.innerText = frases[indice % frases.length];
             // El botón SÍ crece
-            escalaSi += 0.4;
+            escalaSi += 0.6;
             btnSi.style.transform = `scale(${escalaSi})`;
             indice++;
         });
@@ -125,7 +126,7 @@
             // Nailong sacando la lengua (Final)
             tarjeta.innerHTML = `
                 <div class="imagen-container">
-                    <img src="https://media.tenor.com/nailong-tongue.gif" style="width:100%">
+                    <img src="https://tenor.com/es-US/view/yellow-dragon-nailong-gif-14713437061066074768.gif" style="width:100%">
                 </div>
                 <h2 style="color: #d63384; margin-top: 20px;">¡Uy qué fácil, ya sabía! 😎❤️</h2>
             `;
