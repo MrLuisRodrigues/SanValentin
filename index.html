@@ -14,7 +14,6 @@
             background-color: #ffe6e6;
             font-family: 'Segoe UI', sans-serif;
         }
-
         .contenedor {
             text-align: center;
             background: white;
@@ -24,7 +23,6 @@
             max-width: 350px;
             width: 90%;
         }
-
         .imagen-container {
             width: 100%;
             height: 200px;
@@ -33,20 +31,17 @@
             align-items: center;
             margin-bottom: 15px;
         }
-
         img {
             max-width: 100%;
             max-height: 100%;
             border-radius: 15px;
             object-fit: contain;
         }
-
         h1 {
             color: #d63384;
             font-size: 1.4rem;
             margin-bottom: 25px;
         }
-
         .botones {
             display: flex;
             justify-content: center;
@@ -54,7 +49,6 @@
             gap: 15px;
             min-height: 150px; 
         }
-
         #btn-si {
             background-color: #ff4d4d;
             color: white;
@@ -66,7 +60,6 @@
             cursor: pointer;
             transition: all 0.2s ease;
         }
-
         #btn-no {
             background-color: #888;
             color: white;
@@ -82,7 +75,7 @@
 
     <div class="contenedor" id="tarjeta">
         <div class="imagen-container">
-            <img id="imagen-dinamica" src="<iframe src="https://tenor.com/es-US/view/nailong-yellow-dragon-yellow-dino-pouting-gif-14907431710915501229.gif">via GIPHY</a></p>" alt="Ositos tiernos">
+            <img id="imagen-dinamica" src="https://media.tenor.com/9v6N_D_v_pQAAAAi/qoobee-agapi.gif" alt="Nailong tierno">
         </div>
         <h1 id="titulo">¿Quieres ser mi San Valentín? ❤️</h1>
         <div class="botones">
@@ -97,15 +90,13 @@
         const imagen = document.querySelector("#imagen-dinamica");
         const tarjeta = document.querySelector("#tarjeta");
 
-        // Secuencia de imágenes de los ositos para el botón NO
+        // Enlaces DIRECTOS a los GIFs de Nailong (terminan en .gif)
         const imagenesNo = [
-            "https://tenor.com/es-US/view/naloong-naloong-meme-naloong-toy-yellonw-toy-yellow-dragon-toy-gif-1548139012361920604.gif",
-            "https://tenor.com/es-US/view/nailong-yellow-dragon-gif-8404420301845100200.gif",
-            "https://tenor.com/es-US/view/okii-gif-11787630880342186267.gif",
-            "https://tenor.com/es-US/view/nailong-crying-nailong-nailong-crying-gif-13909271765107879892.gif"
+            "https://media.tenor.com/y_v9Xk3S_8UAAAAi/milk-and-mocha-bear-sad.gif",
+            "https://media.tenor.com/7SF5scGB2AFrO/giphy.gif",
+            "https://media.tenor.com/4N3mY2eY-0MAAAAi/qoobee-agapi-crying.gif"
         ];
 
-        // Secuencia de frases según el video
         const frases = [
             "¿Estás segura? 🧐",
             "¡Piénsalo bien! 🥺",
@@ -119,24 +110,20 @@
         let escalaSi = 1;
 
         btnNo.addEventListener("click", function () {
-            // 1. Cambiar imagen (rota por la lista)
+            // Cambia la imagen rotando por la lista
             imagen.src = imagenesNo[indice % imagenesNo.length];
-
-            // 2. Cambiar texto del botón No
+            // Cambia el texto del botón NO
             btnNo.innerText = frases[indice % frases.length];
-
-            // 3. El botón SÍ crece
+            // Hace crecer el botón SÍ
             escalaSi += 0.4;
             btnSi.style.transform = `scale(${escalaSi})`;
-
             indice++;
         });
 
         btnSi.addEventListener("click", function () {
-            // Pantalla final según el video
             tarjeta.innerHTML = `
                 <div class="imagen-container">
-                    <img src="https://tenor.com/es-US/view/yellow-dragon-nailong-gif-14713437061066074768.gif" style="width:100%">
+                    <img src="https://media.tenor.com/vH3jH_m48_oAAAAi/duck-love.gif" style="width:100%">
                 </div>
                 <h2 style="color: #d63384; margin-top: 20px;">¡Uy qué fácil, ya sabía! 😎❤️</h2>
             `;
