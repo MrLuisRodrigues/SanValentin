@@ -91,7 +91,6 @@
         const imagen = document.querySelector("#imagen-dinamica");
         const tarjeta = document.querySelector("#tarjeta");
 
-        // Lista de GIFs de Nailong para cuando dicen NO
         const imagenesNo = [
             "https://tenor.com/es-US/view/nailong-yellow-dragon-yellow-dino-pouting-gif-14907431710915501229.gif",
             "https://tenor.com/es-US/view/naloong-naloong-meme-naloong-toy-yellonw-toy-yellow-dragon-toy-gif-1548139012361920604.gif",
@@ -109,18 +108,18 @@
         let escalaSi = 1;
 
         btnNo.addEventListener("click", function () {
-            // Cambiar imagen rotando
+            
             imagen.src = imagenesNo[indice % imagenesNo.length];
-            // Cambiar texto
+            
             btnNo.innerText = frases[indice % frases.length];
-            // El botón SÍ crece
+            
             escalaSi += 0.8;
             btnSi.style.transform = `scale(${escalaSi})`;
             indice++;
         });
 
         btnSi.addEventListener("click", function () {
-            // Nailong sacando la lengua (Final)
+            
             tarjeta.innerHTML = `
                 <div class="imagen-container">
                     <img src="https://tenor.com/es-US/view/yellow-dragon-nailong-gif-14713437061066074768.gif" style="width:100%">
